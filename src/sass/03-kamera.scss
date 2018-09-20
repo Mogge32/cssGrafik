@@ -1,0 +1,132 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+
+    margin: 0;
+    min-height: 100vh;
+    background-color: green;
+}
+
+$color_camera: rgb(200, 200, 200);
+$color_camera2: rgb(255, 50, 50);
+
+$color_lens1: rgb(50, 50, 50);
+$color_lens2: rgb(80, 80, 80);
+$color_lens3: rgb(100, 100, 100);
+
+$color_button: rgb(155, 50, 10);
+
+$width: 50vw;
+$height: $width*0.6;
+
+$lensw: $width*0.35;
+$lensh: $lensw;
+$lensPosLeft: $width/2 - $lensw/2;
+$lensPosTop: $height/2 - $lensh/2;
+
+$flashw: $width*0.08;
+$flashh: $flashw;
+
+$flashLeft: $width - $flashw*2;
+$flashTop: $flashh*0.6;
+
+$bw: 4vw;
+$bh: $bw;
+$bpl: 2vw;
+$bpt: -1.5vw;
+
+
+.camera{
+    width: $width;
+    height: $height;
+
+    box-shadow: -1px 0px 39px 15px rgba(0,0,0,0.75);
+
+    background-image: linear-gradient(
+        $color_camera,
+        $color_camera 35%,
+        $color_camera2 35%,
+        $color_camera2 65%,
+        $color_camera 65%
+    );
+
+    border-radius: 20px;
+
+    position: relative;
+}
+
+.lens{
+    width: $lensw;
+    height: $lensh;
+    
+    position: absolute;
+    top: $lensPosTop;
+    left: $lensPosLeft;
+
+    border-radius: 50%;
+
+    border: 10px solid $color_camera;
+
+    background-image: radial-gradient(
+        $color_lens1,
+        $color_lens1 30%,
+        $color_lens2 30%,
+        $color_lens2 45%,
+        $color_lens3 45%,
+        $color_lens3 60%,
+        $color_lens1 60%,
+        $color_lens1 75%
+    );
+
+    &::before{
+        content: "";
+        width: $lensw*0.92;
+        height: $lensh*0.92;
+
+        position: absolute;
+
+        border-radius: 50%;
+
+        background: linear-gradient(
+            135deg,
+            rgba(0,0,0,0.5) 0%,
+            rgba(0,0,0,0.5) 50%,
+            rgba(5,5,5,0) 50%,
+            rgba(255,255,255,0) 100%
+        );
+    }
+}
+
+.flash{
+    width: $flashw;
+    height: $flashh;
+
+    left: $flashLeft;
+    top: $flashTop;
+
+    border: 2px solid gray;
+
+    background-color: aqua;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.button{
+    position: absolute;
+    width: $bw;
+    height: $bh;
+
+    border-radius: 15px;
+
+    z-index: -1;
+
+    left: $bpl;
+    top: $bpt;
+
+    background-color: $color_button;
+}

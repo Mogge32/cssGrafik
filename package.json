@@ -1,0 +1,24 @@
+{
+  "name": "cssgrafik",
+  "version": "1.0.0",
+  "description": "kaka",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mogge32/cssGrafik.git"
+  },
+  "author": "Peter Tidholm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nyktek/cssGrafik/issues"
+  },
+  "homepage": "https://github.com/nyktek/cssGrafik#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.2.1",
+    "gulp-sourcemaps": "^2.6.1"
+  }
+}

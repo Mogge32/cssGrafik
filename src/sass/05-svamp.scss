@@ -1,0 +1,160 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+
+    background-color: rgb(32, 164, 252);
+}
+
+h1{
+    font-family: 'Rubik Mono One', sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 5em;
+    margin: 0;
+    padding: 0;
+}
+
+$color_svamp: rgb(51, 187, 33);
+$color_prick: rgb(255,255,255);
+$color_kropp: rgb(255, 217, 111);
+
+$width: 20vw;
+$height: $width*0.8;
+
+$pw: $width*0.4;
+$ph: $pw;
+$pl1: $width/2 - $pw/2;
+$pt1: $height/2 - $ph/1.2;
+
+$kroppw: $width*0.6;
+$kropph: $width*0.3;
+
+.svamp{
+    position: relative;
+
+    width: $width;
+    height: $height;
+
+    background-color: $color_svamp;
+
+    border: 2px solid black;
+
+    border-top-left-radius: 50% 60%;
+    border-top-right-radius: 50% 60%;
+    border-bottom-left-radius: 50% 35%;
+    border-bottom-right-radius: 50% 35%;
+
+    overflow-x: hidden;
+}
+
+.prick{
+    position: absolute;
+    
+    background-color: $color_prick;
+
+    width: $pw;
+    height: $ph;
+
+    border: 2px solid black;
+
+    border-radius: 50%;
+
+    left: $pl1;
+    top: $pt1;
+
+    &::before{
+        content: "";
+
+        position: absolute;
+
+        background-color: $color_prick;
+
+        width: $pw;
+        height: $ph;
+
+        border: 2px solid black;
+
+        border-radius: 50%;
+        left: 130%;
+        top: 30%;
+    }
+    &::after{
+        content: "";
+
+        position: absolute;
+
+        background-color: $color_prick;
+
+        width: $pw;
+        height: $ph;
+
+        border: 2px solid black;
+
+        border-radius: 50%;
+        left: -150%;
+        top: 30%;
+    }
+}
+.kropp{
+    position: relative;
+
+    width: $kroppw;
+    height: $kropph;
+
+    top: -7%;
+    left: 4%;
+
+    background-color: $color_kropp;
+
+    border: 2px solid black;
+
+    border-top-left-radius: 30% 20%;
+    border-top-right-radius: 30% 20%;
+    border-bottom-left-radius: 40% 60%;
+    border-bottom-right-radius: 40% 60%;
+}
+.eye{
+    position: absolute;
+    background-color: black;
+    height: 40%;
+    width: 10%;
+    border-radius: 40%;
+    top:20%;
+
+    &--left{
+        left: 20%;
+        &::before{
+            content: "";
+            background-color: white;
+            height: 30%;
+            width: 40%;
+            position: absolute;
+            border-radius: 50%;
+            left: 30%;
+            top: 10%;
+        }
+    }
+    &--right{
+        left: 70%;
+        &::before{
+            content: "";
+            background-color: white;
+            height: 30%;
+            width: 40%;
+            position: absolute;
+            border-radius: 50%;
+            left: 30%;
+            top: 10%;
+        }
+    }
+
+    
+}

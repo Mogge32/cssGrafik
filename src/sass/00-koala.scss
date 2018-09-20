@@ -1,0 +1,109 @@
+*{
+    box-sizing: border-box;
+}
+
+$color--bg: rgb(201, 206, 252);
+$color--pri: rgb(218, 212, 212);
+$color--sec-1: rgb(255, 255, 255);
+$color--sec-2: rbg(0, 0, 0);
+$color--sec-3: rgb(173, 0, 0);
+
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+
+    background-color: $color--bg;
+
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.head{
+    background-color: rgb(200, 200, 200);
+
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.parts{
+    position: relative;
+
+    .eye{
+        width: 150px;
+        height: 150px;
+        background-color: white;
+        border-radius: 50%;
+        position: absolute;
+        top: 130px;
+
+        &--left{
+            left: 110px;
+        }
+
+        &--right{
+            right: 110px;
+        }
+    
+
+        &::before{
+            content: "";
+            position: absolute;
+            top: 50px;
+            left: 50px;
+
+            height: 50px;
+            width: 50px;
+
+            border-radius: 50%;
+
+            background-color: black;
+        }
+    }
+
+    .nose{
+        background-color: rgb(73, 73, 73);
+
+        border-radius: 70px;
+
+        width: 130px;
+        height: 200px;
+
+        position: absolute;
+        top: 210px;
+        left: calc(50% - 65px);
+    }
+}
+
+.ears{
+    position: relative;
+
+    .ear{
+        width: 300px;
+        height: 300px;
+
+        background-color: darken($color--pri, 20%);
+        border: 30px solid $color--pri;
+        border-radius: 50%;
+
+        position: absolute;
+        top: 20px;
+
+        z-index: -1;
+
+        &--left{
+            left: -130px;
+        }
+        &--right{
+            right: -130px;
+        }
+
+        &::before{
+            background-color: white;
+            
+        }
+    }
+}
